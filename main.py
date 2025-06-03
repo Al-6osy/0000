@@ -148,7 +148,7 @@ def employee_menu(db, auth):
             break
 
 def main():
-    db = DatabaseManager()
+    db = DatabaseManager(db)
     auth = AuthSystem(db)
     emp_manager = EmployeeManager(db, auth)
     notifier = EmailNotifier()
@@ -190,6 +190,3 @@ def main():
                 employee_menu(db, auth)
             
             auth.logout()
-
-if __name__ == "__main__":
-    main()
